@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Provas - Word para SIGA (CSV)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="https://i.postimg.cc/66mpbJVW/RET-Logo-1.png" alt="RET Logo" class="logo">
+            <div>
+                <h1>Conversor de Provas</h1>
+                <p>Converta avaliações do formato Word para o formato SIGA (CSV)</p>
+            </div>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <h2>📝 Cole o texto da prova</h2>
+                <textarea id="inputText" placeholder="Cole aqui o texto da prova no formato Word..."></textarea>
+            </div>
+
+            <div class="gabarito-section">
+                <h2>✓ Cole o gabarito</h2>
+                <textarea id="gabaritoText" placeholder="Exemplo:&#10;1 A&#10;2 A&#10;3 B&#10;4 D&#10;5 A"></textarea>
+            </div>
+
+            <div class="template-section">
+                <h2>📁 Carregar Modelo SIGA (Opcional)</h2>
+                <p class="template-hint">Carregue um arquivo CSV modelo do SIGA para manter o formato exato</p>
+                <input type="file" id="templateFile" accept=".csv,.txt" class="file-input">
+                <div id="templateStatus" class="template-status"></div>
+            </div>
+
+            <button id="convertBtn" class="convert-btn">Converter para SIGA</button>
+
+            <div class="output-section" id="outputSection" style="display: none;">
+                <h2>📄 Resultado (Formato SIGA CSV)</h2>
+                <div class="output-controls">
+                    <button id="copyBtn" class="copy-btn">Copiar Tudo</button>
+                    <button id="downloadBtn" class="download-btn">Baixar CSV</button>
+                    <span id="copyStatus" class="copy-status"></span>
+                </div>
+                <textarea id="outputText" readonly></textarea>
+            </div>
+
+            <div class="preview-section" id="previewSection" style="display: none;">
+                <h2>👁️ Pré-visualização</h2>
+                <div id="previewContent"></div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
+
